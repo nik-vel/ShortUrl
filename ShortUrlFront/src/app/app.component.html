@@ -1,0 +1,12 @@
+<h1>Shorten URL</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="baseUrl">Your URL:</label>
+    <input type="text" class="form-control" id="baseUrl" [(ngModel)]="baseUrl" name="baseUrl" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Make the magic</button>
+</form>
+
+<p *ngIf="shortUrl">Shortened URL: <a [href]="shortUrl">{{shortUrl}}</a></p>
+<p class="error-msg" *ngIf="errorMessage">Something is going wrong: {{errorMessage}}</p>
